@@ -28,7 +28,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.Configure<DatabaseSettings>(config.GetSection(DatabaseSettings.KeyName));
 
-var credentials = new BasicAWSCredentials("AKIAQDFJQWNUEBO4V7XS", "JDLshQLDmXGHb5Z6aktBl9S+n2IsbpmW0hJYcyt3");
+var credentials = new BasicAWSCredentials("", "");
 var awsconfig = new AmazonDynamoDBConfig()
 {
     RegionEndpoint = RegionEndpoint.SAEast1
