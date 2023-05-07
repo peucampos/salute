@@ -8,6 +8,7 @@ using Doctors.Api.Validation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Net.Http.Headers;
+using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 {
@@ -28,7 +29,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.Configure<DatabaseSettings>(config.GetSection(DatabaseSettings.KeyName));
 
-var credentials = new BasicAWSCredentials("", "");
+var settings = SecuritySettings.GetSecuritySettings();
+var credentials = new BasicAWSCredentials(settings.Ak, settings.Sk);
 var awsconfig = new AmazonDynamoDBConfig()
 {
     RegionEndpoint = RegionEndpoint.SAEast1
