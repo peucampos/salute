@@ -44,8 +44,8 @@ public class DoctorRepository : IDoctorRepository
             TableName = _databaseSettings.Value.TableName,
             Key = new Dictionary<string, AttributeValue>
             {
-                { "pk", new AttributeValue { S = id.ToString() } },
-                { "sk", new AttributeValue { S = id.ToString() } }
+                { "id", new AttributeValue { S = id.ToString() } },
+              //  { "sk", new AttributeValue { S = id.ToString() } }
             }
         };
 

@@ -7,8 +7,8 @@ public class DoctorDto
     [JsonPropertyName("pk")]
     public string Pk => Id;
 
-    [JsonPropertyName("sk")]
-    public string Sk => Pk;
+    //[JsonPropertyName("sk")]
+    //public string Sk => Pk;
     
     [JsonPropertyName("id")]
     public string Id { get; init; } = default!;
